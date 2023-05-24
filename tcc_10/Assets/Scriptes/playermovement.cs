@@ -15,6 +15,9 @@ public class playermovement : MonoBehaviour
     public bool verificarDirecaoTiro;
     private movimentoplayer _movimentoPlayer;
 
+   
+
+
     void Start()
     {
 

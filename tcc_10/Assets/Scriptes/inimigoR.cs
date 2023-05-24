@@ -7,6 +7,8 @@ public class inimigoR : MonoBehaviour
     private float speed = 5;
     public int trocardirecao;
 
+    
+
     private void Start()
     {
         trocardirecao = 1;
@@ -15,7 +17,9 @@ public class inimigoR : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector3(1,0,0) * speed * trocardirecao *  Time.deltaTime);
-        
+
+      
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,6 +37,8 @@ public class inimigoR : MonoBehaviour
             trocardirecao = -1;
 
         }
-     
+
+
+       
     }
 }

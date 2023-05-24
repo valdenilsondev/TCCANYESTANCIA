@@ -54,6 +54,10 @@ public class movimentoplayer : MonoBehaviour {
     public bool morrer;
     public GameObject painelGameOver;
 
+    public AudioSource SomdoPulo;
+    public AudioSource SomdoMoeda;
+    public AudioSource SomdoTiro;
+    public AudioSource SomdoBomba;
     void Start() {
 
         inimigoR = FindObjectOfType(typeof(inimigoR)) as inimigoR;
@@ -122,6 +126,7 @@ public class movimentoplayer : MonoBehaviour {
             moedas += 1;
             textoMoedas.text = moedas.ToString();
             Destroy(col.gameObject);
+            SomdoMoeda.Play();
 
         }
 
@@ -166,13 +171,13 @@ public class movimentoplayer : MonoBehaviour {
     public void tiro() {
 
         anim.SetTrigger("Tiro");
-
+        SomdoTiro.Play();
     }
 
     public void bomba() {
 
         Instantiate(bombaM, posicaoProjetil.position, Quaternion.identity);
-
+        SomdoBomba.Play();
     }
 
     public void TiroPlayerParado() {
@@ -187,6 +192,10 @@ public class movimentoplayer : MonoBehaviour {
 
         if (isGrounded == true) {
             rb.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+
+            SomdoPulo.Play();
+
+
         }
 
     }
