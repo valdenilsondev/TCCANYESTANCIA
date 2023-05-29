@@ -20,10 +20,6 @@ public class Som : MonoBehaviour
         audioSourceMusicaDeFundo.clip = musicaDeFundo;
         audioSourceMusicaDeFundo.loop = true;
         audioSourceMusicaDeFundo.Play();
-
-        
-
-
     }
 
     // Update is called once per frame
@@ -32,14 +28,5 @@ public class Som : MonoBehaviour
         SomdoPulo.Play ();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            GetComponent<AudioSource>().Play();
-            GetComponent<Renderer>().enabled = false;
-            GetComponent<SphereCollider>().enabled = false;
-            Destroy(gameObject, 3);
-        }
-    }
+    
 }
